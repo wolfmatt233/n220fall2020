@@ -31,4 +31,16 @@ function setup() {
     fill(212, 86, 13)
     circle(500, midY, 20, 20)
 
+    //Jupiter
+    fill(0,0,0)
+    circle(700, midY, 100, 100)
+
+    //Saturn
+
+
+    //Uranus
+
+
+    //Nepture
+
 }
