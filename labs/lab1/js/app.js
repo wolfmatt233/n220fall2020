@@ -17,7 +17,7 @@ function setup() {
     circle(0, 300, 175, 175);
     
     //mercury
-    fill(209, 189, 159);
+    fill(140, 107, 28);
     stroke (grayoutline);
     circle(215, midY, 15, 15);
 
@@ -38,12 +38,12 @@ function setup() {
     circle(495, midY, 20, 20);
 
     //Line between Mars and Earth
-    stroke(0, 255, 221);
-    line(400, midY, 495, midY);
+    stroke(255, 255, 255);
+    line(440, midY, 475, midY);
 
     //Line between Moon and Earth
-    stroke(0, 255, 17)
-    line(400, midY, 435, 220)
+    stroke(255, 255, 255)
+    line(420, 240, 431, 225)
 
     //Jupiter
     stroke(grayoutline);
@@ -52,8 +52,8 @@ function setup() {
         //Jupiter Storm
         strokeWeight(3);
         stroke(196, 98, 0);
-        fill(217, 120, 24);
-        ellipse(595, 300, 25, 20);
+        fill(184, 115, 6);
+        ellipse(600, 310, 35, 25);
         
 
     //Saturn
