@@ -14,7 +14,7 @@ function setup() {
     fill(255, 132, 0);
     stroke(245, 206, 49);
     strokeWeight(2);
-    circle(0, 300, 175, 175);
+    circle(0, midY, 175, 175);
     
     //mercury
     fill(140, 107, 28);
