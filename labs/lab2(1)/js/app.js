@@ -12,6 +12,10 @@ function draw() {
     strokeWeight(2)
     line(200, 0, 200, 300)
 
+    //lines to make it look like pong
+    line(20, 20, 20, 70)
+    line(380, 150, 380, 200)
+
     //clear the outline for the circle 
     noStroke() 
 
