@@ -10,9 +10,10 @@ function setup() {
 //background and circle setup
 function draw() {
   background(0,0,0)
+  //connect circle to c variable
   circle(300, 300, c);
 
-  //if c is less than 200, then increase the size by one
+  //if c is less than 200, then increase its size by one
   if(c < 200) {
     c = c + 1; 
       console.log(c);

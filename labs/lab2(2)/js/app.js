@@ -19,7 +19,7 @@ function draw() {
     xPos = xPos + xSpeed
         console.log(xPos)
 
-    //circle positions and size
+    //circle positions using the previous variables and setting size
     circle(xPos, yPos, 30)
 
     //if the circle is greater than or equal to the right edge of the canvas (800)
