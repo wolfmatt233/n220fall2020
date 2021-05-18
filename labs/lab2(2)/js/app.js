@@ -10,17 +10,17 @@ function setup() {
     createCanvas(800, 600)
 }
 
-//set up background and other styling
+//set up background and cicle color fill
 function draw() {
-    background(0, 0, 0)
+    background(66, 173, 245)
     fill("orange")
 
-    //take the x position of the circle and add the speed to create movement
+    //take the x position of the circle and add the speed variable to create movement
     xPos = xPos + xSpeed
         console.log(xPos)
 
     //circle positions using the previous variables and setting size
-    circle(xPos, yPos, 30)
+    circle(xPos, yPos, 50)
 
     //if the circle is greater than or equal to the right edge of the canvas (800)
     if (xPos >= 800) {

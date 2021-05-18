@@ -7,10 +7,12 @@ function setup() {
     createCanvas(600, 600)
 }
 
-//background and circle setup
+//background, circle color fill, and circle setup
 function draw() {
-  background(0,0,0)
-  //connect circle to c variable
+  background(233, 245, 66)
+  fill(245, 66, 188)
+
+  //connect circle to c variable and set to middle
   circle(300, 300, c);
 
   //if c is less than 200, then increase its size by one

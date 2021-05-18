@@ -18,12 +18,12 @@ function draw() {
     //place the circle on mouse movement and set the size
     circle(mouseX, mouseY, 15)
 
-    //if mouse position x is greater than the middle (200 --> right side)
+    //if mouse position x is greater than the middle (more than 200 is right side)
     if (mouseX > 200) {
         //then make the circle blue
         fill(217, 55, 37)
     } 
-    //otherwise make the circle red (less than 200 --> left side)
+    //otherwise make the circle red (less than 200 is left side)
     else {
         fill(70, 88, 224)
     }
