@@ -33,7 +33,7 @@ function draw() {
 
 //setup canvas and background
 
-//Set x equal to 16. Add 32 
+//Set x equal to number. Add # * 2 
 //If x is less than the width of the canvas, 
     //then create a circle. 
     //Loop this until x is greater than the width of the canvas
