@@ -25,7 +25,9 @@ function play() {
 
     //Maximum happiness reached: 100 (personal touch)
     if(myPet.happiness >= 100) {
-        myPet.happiness = 100 //wanted to display 'MAX' when 100 was reached, did not get around to it
+        myPet.happiness = 100 
+        //let petstats = document.getElementById("petstats").innerHTML = "MAX" 
+            //wanted to display 'MAX' when 100 was reached, did not get around to it
         console.log(myPet)
     }
 }
@@ -37,7 +39,6 @@ function feed() {
     //Maximum energy reached: 150 (personal touch)
     if(myPet.energy >= 150) {
         myPet.energy = 150
-        let petstats = document.getElementById("petstats").innerHTML = "MAX"
         console.log(myPet)
     }
 }
