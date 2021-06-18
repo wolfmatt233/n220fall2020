@@ -1,34 +1,35 @@
-let userInput = document.getElementById("userInput") //not an array yet, just what user types
-let dvResult = document.getElementById("dvResult") //displays that bad words have been found
+let objResult = document.getElementById("objResult") //connect div from HTML to JS
 
-//bad word array
-let badWords = ["clear", "water", "tires"]
+//objects array
+let objects = [
+    { color: "#FF0000", height: 100, width: 300 }, //object 1
+    { color: "#FFFF00", height: 200, width: 200 }, //object 2
+    { color: "#ff0000", height: 300, width: 100 }, //object 3
+];
 
-//button function to perform the tasks
-function wordCatch() {
-    let userWord = userInput.value //user input variable
-        userWord = userWord.toLowerCase() //changes user input to lowercase once button pressed
-    let splitWord = userWord.split(" ") //splits setence into an array with spaces
+function showDivs() {
+    //loop that creates 3 divs based on array data
+    for(let i = 0; i < objects.length; i++) {
+        let newDiv = document.createElement("div") //new div for objects to attach to every loop
 
-    let lookForC = splitWord.find(function(item) {
-        return splitWord.includes("clear")
-    })
-    let lookForW = splitWord.find(function(item) {
-        return splitWord.includes("water")
-    })
-    let lookForT = splitWord.find(function(item) {
-        return splitWord.includes("tires")
-    })
+        //place object data onto the new div, connect to loop variable (i)
+        newDiv.style.backgroundColor = objects[i].color //object "color" property
+        newDiv.style.height = objects[i].height + "px" //object "height" property
+        newDiv.style.width = objects[i].width + "px" //object "width" property
 
-    console.log(lookForC)
-
-    userInput.value = "" //sets the user input field back to blank
+        objResult.appendChild(newDiv) //connect / append the new div element to the existing HTML div
+    }
 }
+   
+//Algorithm Plan\\
 
-//Algorithm\\
+//create an HTML div for objects to connect to inside of a loop
+    //connect div to JS with document.getElementById
+//create a button to activate the object divs
 
-//use array.find
-    //returns the first true item that appears in an array
+//objects array
 
-//use array.include
-    //returns true or false to whether a certain string or number is in an array
+//for loop, using objects.length
+    //use document.createElement to create a new div element
+    //attach the object properties to the new element using .style
+    //append the new element onto the div that is connected from HTML
