@@ -1,28 +1,34 @@
 let userInput = document.getElementById("userInput") //not an array yet, just what user types
-let dvResult = document.getElementById("dvResult") //displays results
+let dvResult = document.getElementById("dvResult") //displays that bad words have been found
 
 //bad word array
 let badWords = ["clear", "water", "tires"]
 
+//button function to perform the tasks
 function wordCatch() {
-    //user input variable
-    let userWord = userInput.value
+    let userWord = userInput.value //user input variable
+        userWord = userWord.toLowerCase() //changes user input to lowercase once button pressed
+    let splitWord = userWord.split(" ") //splits setence into an array with spaces
 
-    //splits setence into an array
-    let splitWord = userWord.split(" ")
-
-    let lookForBad = splitWord.find(function(item) {
-        splitWord.includes(badWords)
+    let lookForC = splitWord.find(function(item) {
+        return splitWord.includes("clear")
     })
-    
-    
-    console.log(lookForBad)
+    let lookForW = splitWord.find(function(item) {
+        return splitWord.includes("water")
+    })
+    let lookForT = splitWord.find(function(item) {
+        return splitWord.includes("tires")
+    })
 
-    userInput.value = ""
+    console.log(lookForC)
+
+    userInput.value = "" //sets the user input field back to blank
 }
-
 
 //Algorithm\\
 
 //use array.find
+    //returns the first true item that appears in an array
+
 //use array.include
+    //returns true or false to whether a certain string or number is in an array
