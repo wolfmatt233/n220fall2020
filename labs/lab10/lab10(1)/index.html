@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h3>Color Changer</h3>
+    <style>
+        /* sets style for divs */
+        div {
+            background-color: gray;
+            height: 200px;
+            width: 200px;
+            float: left;
+            margin: 5px
+        }
+    </style>
+</head>
+<body>
+    <!-- use class name to connect all instead of using onclick method -->
+    <div class="squareDiv" data-divColor="red"></div> <!-- red data tag -->
+    <div class="squareDiv" data-divColor="green"></div> <!-- green data tag -->
+    <div class="squareDiv" data-divColor="blue"></div> <!-- blue data tag -->
+
+    <script src="js/app.js"></script>
+</body>
+</html>
