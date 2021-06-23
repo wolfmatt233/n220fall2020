@@ -1,50 +1,60 @@
-let gameCard = document.getElementsByClassName("gameCard") //game card class collection in JS
-let clickedArray = [] //empty array: when divs are clicked data-attributes are added to it
-let storeCard = []
+let gameCard = document.getElementsByClassName("gameCard") //game card class collection brought to JS
+let clickedArray = [] //empty array: data-attributes are stored in it when divs are clicked
+let storeCard = [] //empty array: stores the card that is clicked to be modified later
 
 //this loop searches through the collection of game cards 
-//uses the event listener to activate the function once a card has been clicked
 for(let i = 0; i < gameCard.length; i++) { 
+    //listens for a gameCard div to be clicked, then activates the cardFlip function
     gameCard[i].addEventListener("click", cardFlip)
-    
-}
-
-function matchCheck() {
-    
 }
 
 //this function is activated once a card is clicked
-//it will display the color of the card through the data-attribute attached to that card in HTML
+//it has most of the functionality for the game 
 function cardFlip(event) {
-    let showColor = event.target.getAttribute("data-cardColor") //card color variable
-    let clickedCard = this
-    storeCard.push(clickedCard)
-    event.target.style.backgroundColor = showColor //clicked card's background changes using its data-attribute
-    clickedArray.push(showColor) //pushes the clicked cards's color data-attribute to the array
+    let showColor = event.target.getAttribute("data-cardColor") //data-attribute, card color variable
+
+    let clickedCard = this //variable to store the div that is clicked
+    storeCard.push(clickedCard) //pushes the stored div variable into the storeCard array to store it
+
+    //uses the div's data-attribute to change the card's background color; aka flipping the card
+    event.target.style.backgroundColor = showColor 
+    //pushes the clicked cards's color data-attribute to the clickedArray to store the color
+    clickedArray.push(showColor) 
+
+    //console.log testing
+    console.log(this)
     console.log(clickedArray)
     console.log(storeCard)
 
-    //once two cards are chosen, check to see if they match
+    //once two cards have been chosen, check to see if they match
     if (clickedArray.length === 2) {
 
-        setTimeout(function() {
-            //if the first and second clicked divs are the same color then remove the two divs
+        setTimeout(function() { //setTimout to 2000 milliseconds to delay div change
+
+            //if the first and second clicked divs have the same color attribute 
             if (clickedArray[0] === clickedArray[1]) {
-                storeCard[0].style.backgroundColor = "white"
-                storeCard[0].style.border = "none"
-                storeCard[1].style.backgroundColor = "white"
-                storeCard[1].style.border = "none"
-                console.log("match")
+
+                //then remove the two divs (make them invisible using white background)
+                //use the first and second stored array div locations to be able to find and modify the clicked divs' style 
+                storeCard[0].style.backgroundColor = "white" //first clicked div in array
+                storeCard[0].style.border = "none" //first clicked div in array
+                storeCard[1].style.backgroundColor = "white" //second clicked div in array
+                storeCard[1].style.border = "none" //second clicked div in array
+                console.log("match") //console.log testing
+
+                //set the arrays back to nothing so the user can click other divs afterwards
                 clickedArray = []
                 storeCard = []
 
             } else { //if the first and second clicked divs are not the same then flip them back over (gray)
-                storeCard[0].style.backgroundColor = "gray"
-                storeCard[0].style.border = "solid"
-                storeCard[1].style.backgroundColor = "gray"
-                storeCard[1].style.border = "solid"
-                console.log("no match")
-                clickedArray = []
+                //use stored div locations of clicked divs
+                //set divs to back to gray
+                storeCard[0].style.backgroundColor = "gray" //first clicked div in array
+                storeCard[1].style.backgroundColor = "gray" //second clicked div in array
+                console.log("no match") //console.log testing
+
+                //set the arrays back to nothing so the user can click other divs afterwards
+                clickedArray = [] 
                 storeCard = []
             }
         }, 2000)
@@ -53,6 +63,7 @@ function cardFlip(event) {
 
 function resetGame() {
     //very long placeholder for resetting divs to beginning color and border
+    //i don't know how to affect every div in the collection with one line of code
     gameCard[0].style.backgroundColor = "gray"
     gameCard[0].style.border = "solid"
     gameCard[1].style.backgroundColor = "gray"
@@ -85,7 +96,7 @@ function resetGame() {
     gameCard[14].style.border = "solid"
     gameCard[15].style.backgroundColor = "gray"
     gameCard[15].style.border = "solid"
-    clickedArray = [] //sets array back to nothing so the game can function
+    clickedArray = [] //sets array back to nothing so the user can click other divs afterwards 
 }
 
 
@@ -101,20 +112,21 @@ function resetGame() {
 //Algorithm\\
 
 //4x4 grid of cards
-    //divs in a collection
+    //divs in a class collection
 //reveal value of card on click
     //event listener and loop
-    //loop: i < 2, a max of 2 cards flipped at once
 //if two revealed cards match, remove them
     //if statement
     //data-attributes of two cards equal
-    //remove them
+    //remove them, make white background
 //if two cards do not match, return them to face over
     //if statement
     //if data-attributes of two cards do not equal
-    //flip them back over
+    //flip them back over, make gray again
 //replay game button
+    //set all cards back to gray
 //use setTimeout to keep both face up cards visible for two seconds before hiding / removing them
+
 
 //game grid of 16 cards, each with a data-attribute
 //on a click, the data-attribute is taken and put makes the background color of the clicked div

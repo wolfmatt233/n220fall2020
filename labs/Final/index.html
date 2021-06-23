@@ -7,6 +7,7 @@
     <h3>Concentration Game</h3>
     <style>
 
+        /* grid styling */
         .gameGrid {
             display: grid;
             grid-template-columns: 100px 100px 100px 100px;
@@ -14,6 +15,7 @@
             row-gap: 15px;
         }
 
+        /* face down card starting style */
         .gameCard {
             background-color: gray;
             height: 100px;
@@ -22,6 +24,7 @@
             border-style: solid;
         }
 
+        /* button placement */
         button {
             margin-top: 10px;
             margin-left: 190px
@@ -49,7 +52,9 @@
         <div class="gameCard" data-cardColor="orange"></div> <!-- orange data attribute -->
         <div class="gameCard" data-cardColor="turquoise"></div> <!-- turquoise data attribute -->
     </div>
-    <button onclick="resetGame()">Reset Game</button>
+
+    <!-- reset game board button and function -->
+    <button onclick="resetGame()">Reset Game</button> 
 
     <script src="js/app.js"></script>
 </body>
