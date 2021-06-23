@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h3>Concentration Game</h3>
+    <style>
+
+        .gameGrid {
+            display: grid;
+            grid-template-columns: 100px 100px 100px 100px;
+            column-gap: 20px;
+            row-gap: 15px;
+        }
+
+        .gameCard {
+            background-color: gray;
+            height: 100px;
+            width: 100px;
+            float: left;
+            border-style: solid;
+        }
+
+        button {
+            margin-top: 10px;
+            margin-left: 190px
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 4x4 grid of cards -->
+    <div class="gameGrid">
+        <div class="gameCard" data-cardColor="red"></div> <!-- red data attribute -->
+        <div class="gameCard" data-cardColor="green"></div> <!-- green data attribute -->
+        <div class="gameCard" data-cardColor="blue"></div> <!-- blue data attribute -->
+        <div class="gameCard" data-cardColor="yellow"></div> <!-- yellow data attribute -->  
+        <div class="gameCard" data-cardColor="pink"></div> <!-- pink data attribute --> 
+        <div class="gameCard" data-cardColor="green"></div> <!-- green data attribute -->
+        <div class="gameCard" data-cardColor="yellow"></div> <!-- yellow data attribute -->
+        <div class="gameCard" data-cardColor="purple"></div> <!-- purple data attribute -->
+        <div class="gameCard" data-cardColor="blue"></div> <!-- blue data attribute -->
+        <div class="gameCard" data-cardColor="turquoise"></div> <!-- turquoise data attribute -->
+        <div class="gameCard" data-cardColor="purple"></div> <!-- purple data attribute -->
+        <div class="gameCard" data-cardColor="orange"></div> <!-- orange data attribute -->
+        <div class="gameCard" data-cardColor="red"></div> <!-- red data attribute -->
+        <div class="gameCard" data-cardColor="pink"></div> <!-- pink data attribute -->
+        <div class="gameCard" data-cardColor="orange"></div> <!-- orange data attribute -->
+        <div class="gameCard" data-cardColor="turquoise"></div> <!-- turquoise data attribute -->
+    </div>
+    <button onclick="resetGame()">Reset Game</button>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
