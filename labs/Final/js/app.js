@@ -1,40 +1,58 @@
 let gameCard = document.getElementsByClassName("gameCard") //game card class collection in JS
-let twoArray = [] //empty array: when divs are clicked data-attributes are added to it
-twoArray.slice(0, 2)
+let clickedArray = [] //empty array: when divs are clicked data-attributes are added to it
+let storeCard = []
 
 //this loop searches through the collection of game cards 
 //uses the event listener to activate the function once a card has been clicked
 for(let i = 0; i < gameCard.length; i++) { 
-    gameCard[i].addEventListener("click", squareClick)
+    gameCard[i].addEventListener("click", cardFlip)
+    
 }
 
-function squareClick(event) {
+function matchCheck() {
+    
+}
+
+//this function is activated once a card is clicked
+//it will display the color of the card through the data-attribute attached to that card in HTML
+function cardFlip(event) {
     let showColor = event.target.getAttribute("data-cardColor") //card color variable
-    event.target.style.backgroundColor = showColor //clicked div background turns into the card's data-attribute
-    twoArray.push(showColor) //push the clicked div's color data-attribute to the array
-    console.log(twoArray)
+    let clickedCard = this
+    storeCard.push(clickedCard)
+    event.target.style.backgroundColor = showColor //clicked card's background changes using its data-attribute
+    clickedArray.push(showColor) //pushes the clicked cards's color data-attribute to the array
+    console.log(clickedArray)
+    console.log(storeCard)
 
-    //if the first clicked div's  data-attribute equals the second clicked one's then
-    if (twoArray[0] == twoArray[1]) { 
-        console.log("same",twoArray)
+    //once two cards are chosen, check to see if they match
+    if (clickedArray.length === 2) {
 
-        setTimeout(function() {        
-            //remove the two clicked divs after 2 seconds
-            event.target.style.backgroundColor = "white"
-            event.target.style.border = "none"
-            twoArray = []
+        setTimeout(function() {
+            //if the first and second clicked divs are the same color then remove the two divs
+            if (clickedArray[0] === clickedArray[1]) {
+                storeCard[0].style.backgroundColor = "white"
+                storeCard[0].style.border = "none"
+                storeCard[1].style.backgroundColor = "white"
+                storeCard[1].style.border = "none"
+                console.log("match")
+                clickedArray = []
+                storeCard = []
+
+            } else { //if the first and second clicked divs are not the same then flip them back over (gray)
+                storeCard[0].style.backgroundColor = "gray"
+                storeCard[0].style.border = "solid"
+                storeCard[1].style.backgroundColor = "gray"
+                storeCard[1].style.border = "solid"
+                console.log("no match")
+                clickedArray = []
+                storeCard = []
+            }
         }, 2000)
     }
-
-    // if (twoArray[0] != twoArray[1]) {
-    //     event.target.style.backgroundColor = "gray"
-    //     event.target.style.border = "solid"
-    //     //twoArray = []
-    // } 
 }
 
 function resetGame() {
-    //very long placeholder for resetting divs to beginning color
+    //very long placeholder for resetting divs to beginning color and border
     gameCard[0].style.backgroundColor = "gray"
     gameCard[0].style.border = "solid"
     gameCard[1].style.backgroundColor = "gray"
@@ -67,7 +85,7 @@ function resetGame() {
     gameCard[14].style.border = "solid"
     gameCard[15].style.backgroundColor = "gray"
     gameCard[15].style.border = "solid"
-    twoArray = [] //sets array back to nothing so the game can function
+    clickedArray = [] //sets array back to nothing so the game can function
 }
 
 
@@ -106,4 +124,3 @@ function resetGame() {
     //then make the div's with that color disappear after 2 seconds
 //if the first and second array objects are not the same
     //then make the clicked divs back to gray after 2 seconds
-    
