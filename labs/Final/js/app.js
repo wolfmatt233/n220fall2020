@@ -96,7 +96,10 @@ function resetGame() {
     gameCard[14].style.border = "solid"
     gameCard[15].style.backgroundColor = "gray"
     gameCard[15].style.border = "solid"
-    clickedArray = [] //sets array back to nothing so the user can click other divs afterwards 
+    
+    //set arrays back to nothing so the user can click other divs afterwards 
+    clickedArray = [] 
+    storeCard = [] 
 }
 
 
