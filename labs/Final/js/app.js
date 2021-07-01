@@ -62,40 +62,11 @@ function cardFlip(event) {
 }
 
 function resetGame() {
-    //very long placeholder for resetting divs to beginning color and border
-    //i don't know how to affect every div in the collection with one line of code
-    gameCard[0].style.backgroundColor = "gray"
-    gameCard[0].style.border = "solid"
-    gameCard[1].style.backgroundColor = "gray"
-    gameCard[1].style.border = "solid"
-    gameCard[2].style.backgroundColor = "gray"
-    gameCard[2].style.border = "solid"
-    gameCard[3].style.backgroundColor = "gray"
-    gameCard[3].style.border = "solid"
-    gameCard[4].style.backgroundColor = "gray"
-    gameCard[4].style.border = "solid"
-    gameCard[5].style.backgroundColor = "gray"
-    gameCard[5].style.border = "solid"
-    gameCard[6].style.backgroundColor = "gray"
-    gameCard[6].style.border = "solid"
-    gameCard[7].style.backgroundColor = "gray"
-    gameCard[7].style.border = "solid"
-    gameCard[8].style.backgroundColor = "gray"
-    gameCard[8].style.border = "solid"
-    gameCard[9].style.backgroundColor = "gray"
-    gameCard[9].style.border = "solid"
-    gameCard[10].style.backgroundColor = "gray"
-    gameCard[10].style.border = "solid"
-    gameCard[11].style.backgroundColor = "gray"
-    gameCard[11].style.border = "solid"
-    gameCard[12].style.backgroundColor = "gray"
-    gameCard[12].style.border = "solid"
-    gameCard[13].style.backgroundColor = "gray"
-    gameCard[13].style.border = "solid"
-    gameCard[14].style.backgroundColor = "gray"
-    gameCard[14].style.border = "solid"
-    gameCard[15].style.backgroundColor = "gray"
-    gameCard[15].style.border = "solid"
+    //for loop to replace the background color and border style to default for every card on the game grid
+    for (let i = 0; i < gameCard.length; i++) {
+        gameCard[i].style.backgroundColor = "gray"
+        gameCard[i].style.border = "solid"
+    }
     
     //set arrays back to nothing so the user can click other divs afterwards 
     clickedArray = [] 
