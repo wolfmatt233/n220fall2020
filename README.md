@@ -1,7 +1,7 @@
-## N220: Introduction to Media Application Development 
-# Summer 2021
+# N220: Introduction to Media Application Development 
+## Summer 2021
 
-# Description
+## Description
 
 This class primarily focussed on base JavaScript and the basics of development concerning that.
 From the class description: "students use markup tags and scripting to create applications that emphasize graphics, animation, sounds, and interactivity."
